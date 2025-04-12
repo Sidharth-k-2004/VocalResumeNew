@@ -21,10 +21,10 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["http://localhost:3001"])
+CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
 
 # Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root123@localhost/VOCALRESUME'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Shachi2374@localhost/VOCALRESUME'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = 'my-very-secret-key'  
 app.config['JWT_TOKEN_LOCATION'] = ['cookies']
@@ -164,7 +164,7 @@ def process_with_gemini(transcript, template_id):
         # Add template information
         resume_data["templateId"] = template_id
         resume_data["templateName"] = TEMPLATES.get(int(template_id), "Professional")
-        
+        print(resume_data)
         return resume_data
     except Exception as e:
         print(f"Error processing with Gemini: {e}")

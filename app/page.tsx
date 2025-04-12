@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { redirect } from "next/navigation"
+import { Metadata } from "next"
 
 export default function Home() {
   return (
@@ -74,4 +76,5 @@ export default function Home() {
       </footer>
     </div>
   )
+  redirect("/templates")
 }
